@@ -1,10 +1,10 @@
 #set working directory
 setwd("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/")
 
-#Generating residuals for INT transform
+###Generating residuals for INT transform
 #load in applicable libraries
 library(e1071) #for skewness and kurtosis functions
-library(dplyr) #for data manipulation
+library(dplyr) #for INT transform
 #load in data
 all <- read.table("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/samples_new/all_used_data.txt", header=T, stringsAsFactors = F)
 all_log <- read.table("pheno_log.txt", header=T, stringsAsFactors=F)
@@ -26,7 +26,7 @@ all_INT <- all %>%
 #check normality (slight deviations are acceptable for GWAS)
 print ("all")
 mean(all_INT$INT_CAC, na.rm = T) #should be close to 0
-sd(all_INT$INT_CAC, na.rm = T) #should be close to
+sd(all_INT$INT_CAC, na.rm = T) #should be close to 1
 skewness(all_INT$INT_CAC, na.rm = T) #should be close to 0
 kurtosis(all_INT$INT_CAC, na.rm = T) #should be close to 3
 #Open a PNG device (creates an image file)
@@ -50,3 +50,4 @@ write.table(all_INT, "pheno_INT.txt", sep = "\t", row.names = F, quote = F)
 #combine pheno_INT.txt with pheno_log.txt to have both phenotypes in one file
 all_pheno <- merge(all_INT, all_log, by = c("project_pseudo_id","age","gender","cacscore_agatston_adu_m_1"), all = TRUE, sort = F)
 write.table(all_pheno, "pheno_INT_log.txt", sep = "\t", row.names = F, quote = F)
+
