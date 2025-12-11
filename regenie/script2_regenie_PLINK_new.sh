@@ -6,8 +6,8 @@
 #SBATCH --mem=64GB
 #SBATCH --tmp=30GB
 #SBATCH --job-name=DATAprep
-#SBATCH --output=log2_regenie_DATA_PLINK.txt
-#SBATCH --error=log2_regenie_DATA_PLINK.err
+#SBATCH --output=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/logs/log2_regenie_DATA_PLINK.txt
+#SBATCH --error=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/logs/log2_regenie_DATA_PLINK.err
 
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/DATA-PLINK
 # Preparing genotype file for regenie step1
