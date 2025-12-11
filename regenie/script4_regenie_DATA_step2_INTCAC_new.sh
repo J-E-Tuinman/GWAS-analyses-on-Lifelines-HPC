@@ -5,13 +5,15 @@
 #SBATCH --mem=10G
 #SBATCH --tmp=30GB
 #SBATCH --cpus-per-task=4
-#SBATCH --output=logs/log4_regenie_DATA_INTCAC_step2.txt
-#SBATCH --error=logs/log4_regenie_DATA_INTCAC_step2.err
+#SBATCH --output=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/logs/log4_regenie_DATA_INTCAC_step2.txt
+#SBATCH --error=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/logs/log4_regenie_DATA_INTCAC_step2.err
 #SBATCH -t 24:00:00
 
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output
 module load regenie
-
+# Note: prepare folder: DATA-regenie2 in advance
+# Note: for binary phenotypes, add argument --bt to below command. Binary uses 0/1 coding (with NA for missing)
+# Note: the PART loop is required due to the .bgen files being split into 10 parts per chromosome for UGLI data
 for CHR in `seq 1 22` 
 do
   for PART in `seq 1 10` 
@@ -20,6 +22,7 @@ do
       SAMPLE_FILE=/groups/umcg-lifelines/tmp02/projects/ov19_0495/3_Round2_Imputed_Genotypes_cleaned/BGEN/UGLI0to3.sample
 
       # Run regenie step 2
+      # Note: again no age & sex present for this step due to the correction being applied when calculating residuals
   regenie \
     --step 2 \
     --bgen $BGEN_FILE \

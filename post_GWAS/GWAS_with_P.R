@@ -1,4 +1,4 @@
-#creating P value column
+# adding P-value to summary statistics in new column 'P'
 
 setwd("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/DATA-regenie2/")
 #read in data
@@ -12,4 +12,5 @@ INTCAC$P <- 10^(-INTCAC$LOG10P)
 #write to file
 write.table(logCAC, "/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/DATA-regenie2/DATA-logCAC-allP.regenie.gz", row.names=F, col.names=T, quote=F)
 write.table(INTCAC, "/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/DATA-regenie2/DATA-INTCAC-allP.regenie.gz", row.names=F, col.names=T, quote=F)
+
 

@@ -5,16 +5,15 @@
 #SBATCH --mem=12G
 #SBATCH --tmp=30GB
 #SBATCH --cpus-per-task=8
-#SBATCH --output=log3_DATA_PHENO.txt
-#SBATCH --error=log3_DATA_PHENO.err
+#SBATCH --output=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/logs/log3_DATA_PHENO.txt
+#SBATCH --error=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/logs/log3_DATA_PHENO.err
 #SBATCH -t 00:40:00
 
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/DATA-PLINK/
 gunzip dataG_DATA_v*.gz
 
-# Prepare folders : regenie_GSA1, regenie_AFFY1, regenie_CS1 in advance
+# Prepare folder: DATA-regenie1 in advance
 # It may not be necessary to use a separate temp folder for all as the temp files get unique names
-# Note for next time: maybe change -out   into     --out DATA-regenie1/PHENO
 
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/
 DIR_TEMP=./temp_DATA_PHENO	# for dumping low-mem index
@@ -22,6 +21,7 @@ mkdir -p $DIR_TEMP
 # Note: use sure that the files in lowmem-prefix do NOT have overlapping names if you are running multiple phenotypes concurrently
 # Note: for binary phenotypes, add argument --bt to below command. Binary uses 0/1 coding (with NA for missing)
 # Note: missing phenotypes will be imputed in step1; unless argument --strict is used, which will remove samples with any missing phenotypes
+# Note: for INT only PCs are taken as covariates due to the calculated residuals having been corrected for age & sex already
 
 module load regenie
 regenie \
