@@ -1,3 +1,5 @@
+### Transforming CAC scores from filtered imal file using log(CAC + 1) ###
+
 #set working directory
 setwd("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/UGLI0-3/output/")
 
@@ -36,4 +38,3 @@ qqline(all_log$logCAC)
 dev.off()
 #generate file with log CAC scores
 write.table(all_log, "pheno_log.txt", sep = "\t", row.names = F, quote = F)
-

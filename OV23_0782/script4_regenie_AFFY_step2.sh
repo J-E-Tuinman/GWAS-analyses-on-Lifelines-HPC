@@ -9,6 +9,7 @@
 #SBATCH --error=/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/output/AFFY-regenie2/logs/log4_AFFY_logCAC.err
 #SBATCH -t 24:00:00
 
+# Prepare folders in advance: AFFY-regenie2, AFFY-regenie2/logs
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/output
 module load regenie
 

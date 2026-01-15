@@ -12,7 +12,7 @@
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/output/DATA-PLINK/
 gunzip dataG_DATA_v*.gz
 
-# Prepare folders : DATA-regenie1 in advance
+# Prepare folders : DATA-regenie1, DATA-regenie1/logs in advance
 # It may not be necessary to use a separate temp folder for all as the temp files get unique names
 
 cd /groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/output/

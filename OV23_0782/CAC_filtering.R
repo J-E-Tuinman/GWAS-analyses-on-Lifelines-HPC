@@ -1,3 +1,5 @@
+### Filtering imal data on Europeans with valid CAC score ###
+
 #set working directory
 setwd("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3")
 

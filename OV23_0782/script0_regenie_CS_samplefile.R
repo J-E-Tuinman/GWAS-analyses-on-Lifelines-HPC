@@ -1,6 +1,7 @@
 # Script to create a CytoSNP sample file for REGENIE/.bgen format
 # Based on scriptL2c_P33R5
 # Written by Peter van der Most, December 2022; updated June 2023; updated again October 2025
+# Updated Januari 2026 to be used in ov23_0782 project
 
 
 setwd("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/")

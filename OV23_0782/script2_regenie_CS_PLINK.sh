@@ -23,7 +23,7 @@ cd $TMPDIR
 rm chrX*
 
 
-# Change name of file
+# Change name of file and merge all chromosomes into one bfile
 # using PLINK 1.9 instead of 2, previous script required this due to merging bfiles
 # possibly not required
 module load PLINK/1.9-beta6-20190617
