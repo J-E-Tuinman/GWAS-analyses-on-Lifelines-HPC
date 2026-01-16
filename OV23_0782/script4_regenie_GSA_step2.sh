@@ -31,8 +31,6 @@ do
     --catCovarList gender \
     --pred GSA-regenie1/logCAC_pred.list \
     --bsize 400 \
-    --minINFO 0.3 \
-    --minMAC 2 \
     --threads 4 \
     --maxCatLevels 99 \
     --write-samples \
