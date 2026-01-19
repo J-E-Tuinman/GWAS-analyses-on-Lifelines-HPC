@@ -2,7 +2,7 @@
 setwd("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/output/")
 
 #read in data
-Fdata <- read.table("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/samples/pheno_INT_log.txt", header = T)
+Fdata <- read.table("/groups/umcg-lifelines/tmp02/projects/ov23_0782/jtuinman/UGLI0-3/samples/pheno_log.txt", header = T)
 GSA_link <- read.csv("/groups/umcg-lifelines/prm03/projects/ov23_0782/linkage_files_202506/gsa_linkage_file_v2_OV23_0782.csv", header = T)
 CYTO_link <- read.csv("/groups/umcg-lifelines/prm03/projects/ov23_0782/linkage_files_202506/cytosnp_linkage_file_v5_OV23_0782.csv", header = T)
 AFFY_link <- read.csv("/groups/umcg-lifelines/prm03/projects/ov23_0782/linkage_file_202512/OV23_00782_affymetrix_linkage_file_v3.csv", header = T)

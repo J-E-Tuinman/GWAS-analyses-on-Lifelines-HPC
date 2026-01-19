@@ -35,6 +35,7 @@ module load PLINK/2.0-alpha6.20-20250707
 # performing QC and LD-pruning
 plink2 \
   --bfile dataG_CS_v1 \
+  --nonfounders \
   --geno 0.1 \
   --hwe 1e-6 \
   --mac 100 \
